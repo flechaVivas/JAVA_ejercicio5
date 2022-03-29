@@ -10,7 +10,7 @@ public class Principal {
 
 	public static void main(String[] args) {
 		
-		String[] empleados = new String[3];
+		Empleado[] empleados = new Empleado[3];
 		
 		Scanner lector = new Scanner(System.in);
 		
@@ -27,6 +27,8 @@ public class Principal {
 				
 				System.out.println("Ingrese cantidad de horas del mes: ");
 				a.setHsMes(Integer.parseInt(lector.nextLine()));
+				
+				empleados[i] = a;
 	
 			} else {
 				
@@ -36,12 +38,12 @@ public class Principal {
 				v.setTotalVentas(Float.parseFloat(lector.nextLine()));
 				v.setPorcenComision(Float.parseFloat(lector.nextLine()));
 				
-				
-				
-				
-				
+				empleados[i] = v;
+	
 			}
 		}
+		
+		System.out.println(empleados);
 		
 		lector.close();
 		
