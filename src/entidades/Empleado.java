@@ -39,4 +39,13 @@ public class Empleado {
 		this.sueldoBase = sueldoBase;
 	}
 	
+	public Empleado(int dni, String nombre, String apellido, float sueldoBase) {
+		this.setDni(dni);
+		this.setNombre(nombre);
+		this.setApellido(apellido);
+		this.setSueldoBase(sueldoBase);
+	}
+	
+	
+	
 }

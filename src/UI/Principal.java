@@ -57,7 +57,7 @@ public class Principal {
 		e.setNombre(lector.nextLine());
 		
 		System.out.print("Ingrese apellido: ");
-		e.setApellido(lector.nextLine())
+		e.setApellido(lector.nextLine());
 		
 		System.out.print("ingrese email: ");
 		e.setEmail(lector.nextLine());

@@ -1,5 +1,7 @@
 package entidades;
 
+import entidades.Empleado;
+
 public class Vendedor extends Empleado{
 	float porcenComision;
 	float totalVentas;
@@ -17,4 +19,10 @@ public class Vendedor extends Empleado{
 	public void setTotalVentas(float totalVentas) {
 		this.totalVentas = totalVentas;
 	}
+	
+	public Vendedor(float porcenComision, float totalVentas) {
+		super(dni,nombre,apellido,sueldoBase);
+
+	}
+	
 }
