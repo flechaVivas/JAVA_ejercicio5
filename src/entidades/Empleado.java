@@ -44,13 +44,13 @@ public abstract class Empleado {
 	
 	public Empleado() {}
 
-	// Método constructor:
-	public Empleado(String dni, String nombre, String apellido, float sueldoBase) {
-		this.setDni(dni);
-		this.setNombre(nombre);
-		this.setApellido(apellido);
-		this.setSueldoBase(sueldoBase);
-	}
+//	 Método constructor:
+//	public Empleado(String dni, String nombre, String apellido, float sueldoBase) {
+//		this.setDni(dni);
+//		this.setNombre(nombre);
+//		this.setApellido(apellido);
+//		this.setSueldoBase(sueldoBase);
+//	}
 	
 	public static void cargaDatos(Empleado e) {
 		

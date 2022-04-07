@@ -22,12 +22,12 @@ public class Vendedor extends Empleado{
 	
 	public Vendedor() {}
 	
-	public Vendedor(String dni, String nombre, String apellido, float sueldoBase, float porcenComision, float totalVentas) {
-		super(dni,nombre,apellido,sueldoBase);
-		this.setPorcenComision(porcenComision);
-		this.setTotalVentas(totalVentas);
-
-	}
+//	public Vendedor(String dni, String nombre, String apellido, float sueldoBase, float porcenComision, float totalVentas) {
+//		super(dni,nombre,apellido,sueldoBase);
+//		this.setPorcenComision(porcenComision);
+//		this.setTotalVentas(totalVentas);
+//
+//	}
 	
 	public double getSueldo() {
 		return this.getSueldoBase() + (this.getPorcenComision()*this.getTotalVentas()/100);

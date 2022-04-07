@@ -21,11 +21,11 @@ public class Administrativo extends Empleado {
 	
 	public Administrativo() {}
 	
-	public Administrativo(String dni, String nombre, String apellido,float sueldoBase,int hsExtra, int hsMes) {
-		super(dni,nombre,apellido,sueldoBase);
-		this.setHsExtra(hsExtra);
-		this.setHsMes(hsMes);
-	}
+	//public Administrativo(String dni, String nombre, String apellido,float sueldoBase,int hsExtra, int hsMes) {
+	//	super(dni,nombre,apellido,sueldoBase);
+	//	this.setHsExtra(hsExtra);
+	//	this.setHsMes(hsMes);
+	//}
 	
 	public String mostrarDatos() {
 		return "Administrativo "+ super.mostrarDatos();

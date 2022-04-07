@@ -1,6 +1,9 @@
 package UI;
 
+import java.util.ArrayList;
 import java.util.Scanner;
+
+import javax.swing.JOptionPane;
 
 import entidades.*;
 
@@ -13,10 +16,17 @@ public class Principal {
 		
 		Scanner lector = new Scanner(System.in);
 		
-		Empleado[] empleados = new Empleado[3];
+		// Empleado[] empleados = new Empleado[3];
+		
+		ArrayList<Empleado>empleados = new ArrayList<Empleado>();
 			
 		System.out.println("CARGA DE EMPLEADOS");
-		for (int i = 0; i < empleados.length; i++) {
+	//	for (int i = 0; i < empleados.length; i++) {
+		
+		int rta = 0;
+		while (empleados.size()<20 && rta != 1) {
+			
+		
 			System.out.println("1) Administrativo    2) Vendedor");
 			if (Integer.parseInt(lector.nextLine()) == 1) {
 				
@@ -29,7 +39,8 @@ public class Principal {
 				System.out.println("Ingrese cantidad de horas del mes: ");
 				a.setHsMes(Integer.parseInt(lector.nextLine()));
 				
-				empleados[i] = a;
+				//empleados[i] = a;
+				empleados.add(a);
 	
 			} else {
 				
@@ -41,15 +52,21 @@ public class Principal {
 				System.out.println("Ingrese porcentaje de comisión: ");
 				v.setPorcenComision(Float.parseFloat(lector.nextLine()));
 				
-				empleados[i] = v;
+				//empleados[i] = v;
+				empleados.add(v);
 	
 			}
+			rta = JOptionPane.showConfirmDialog(null, "Desea cargar otro?");
 		}
 		
-		System.out.println("LISTA DE EMPLEADOS"
-		+ "\n  Puesto     DNI      Nombre y Apellido      Sueldo");
-		for (int i = 0; i < empleados.length; i++) {
-			System.out.println(empleados[i].mostrarDatos());
+//		System.out.println("LISTA DE EMPLEADOS"
+//		+ "\n  Puesto     DNI      Nombre y Apellido      Sueldo");
+//		for (int i = 0; i < empleados.length; i++) {
+//			System.out.println(empleados[i].mostrarDatos());
+//		}
+		
+		for (Empleado empleado : empleados) {
+			System.out.println(empleado.mostrarDatos());
 		}
 		
 		lector.close();
@@ -74,9 +91,4 @@ public class Principal {
 	}
 	
 	
-	
-	
-	
-	
-
 }
