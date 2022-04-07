@@ -3,8 +3,8 @@ package entidades;
 import entidades.Empleado;
 
 public class Vendedor extends Empleado{
-	float porcenComision;
-	float totalVentas;
+	private float porcenComision;
+	private float totalVentas;
 	
 	
 	public float getPorcenComision() {
@@ -20,9 +20,23 @@ public class Vendedor extends Empleado{
 		this.totalVentas = totalVentas;
 	}
 	
-	public Vendedor(float porcenComision, float totalVentas) {
+	public Vendedor() {}
+	
+	public Vendedor(String dni, String nombre, String apellido, float sueldoBase, float porcenComision, float totalVentas) {
 		super(dni,nombre,apellido,sueldoBase);
+		this.setPorcenComision(porcenComision);
+		this.setTotalVentas(totalVentas);
 
 	}
+	
+	public double getSueldo() {
+		return this.getSueldoBase() + (this.getPorcenComision()*this.getTotalVentas()/100);
+	}
+	
+	public String mostrarDatos() {
+		return "Vendedor "+ super.mostrarDatos();
+	}
+	
+	
 	
 }

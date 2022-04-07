@@ -1,17 +1,20 @@
 package entidades;
 
-public class Empleado {
-	private int dni;
+import java.util.Scanner;
+
+public abstract class Empleado {
+	private String dni;
 	private String nombre;
 	private String apellido;
 	private String email;
 	private float sueldoBase;
 	
 	
-	public int getDni() {
+	
+	public String getDni() {
 		return dni;
 	}
-	public void setDni(int dni) {
+	public void setDni(String dni) {
 		this.dni = dni;
 	}
 	public String getNombre() {
@@ -39,12 +42,50 @@ public class Empleado {
 		this.sueldoBase = sueldoBase;
 	}
 	
-	public Empleado(int dni, String nombre, String apellido, float sueldoBase) {
+	public Empleado() {}
+
+	// Método constructor:
+	public Empleado(String dni, String nombre, String apellido, float sueldoBase) {
 		this.setDni(dni);
 		this.setNombre(nombre);
 		this.setApellido(apellido);
 		this.setSueldoBase(sueldoBase);
 	}
+	
+	public static void cargaDatos(Empleado e) {
+		
+		Scanner lector = new Scanner(System.in);
+		
+		System.out.print("Ingrese DNI: ");
+		e.setDni(lector.nextLine());
+		
+		System.out.print("Ingrese nombre: ");
+		e.setNombre(lector.nextLine());
+		
+		System.out.print("Ingrese apellido: ");
+		e.setApellido(lector.nextLine());
+		
+		System.out.print("ingrese email: ");
+		e.setEmail(lector.nextLine());
+		
+		System.out.print("ingrese sueldoBase: ");
+		e.setSueldoBase(Integer.parseInt(lector.nextLine()));
+		
+		lector.close();
+	}
+	
+	
+	public abstract double getSueldo();
+	
+	
+	public String mostrarDatos() {
+		return this.getDni() +" - "+this.getNombre() +" "+ this.getApellido()+" - "+ "$"+ this.getSueldo();
+	}
+	
+	
+	
+	
+	
 	
 	
 	
